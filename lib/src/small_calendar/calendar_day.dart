@@ -94,7 +94,7 @@ class CalendarDay extends StatelessWidget {
         child: new ClipRect(
           child: new Text(
             "${dayData.day.day}",
-            style: isExtended ? style.extendedDayTextStyle : style.dayTextStyle,
+            style: dayData.isSelected ? style.selectedDayTextStyle : isExtended ? style.extendedDayTextStyle : style.dayTextStyle,
           ),
         ),
       ),

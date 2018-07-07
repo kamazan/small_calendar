@@ -8,6 +8,7 @@ class DayStyle {
   DayStyle.raw({
     @required this.dayTextStyle,
     @required this.extendedDayTextStyle,
+    @required this.selectedDayTextStyle,
     @required this.todayColor,
     @required this.selectedColor,
     @required this.showTicks,
@@ -33,6 +34,7 @@ class DayStyle {
   factory DayStyle({
     TextStyle dayTextStyle,
     TextStyle extendedDayTextStyle,
+    TextStyle selectedDayTextStyle,
     Color todayColor,
     Color selectedColor,
     bool showTicks = true,
@@ -47,6 +49,7 @@ class DayStyle {
       dayTextStyle: dayTextStyle ?? new TextStyle(),
       extendedDayTextStyle:
           extendedDayTextStyle ?? new TextStyle(fontWeight: FontWeight.w300),
+      selectedDayTextStyle: selectedDayTextStyle ?? new TextStyle(),
       todayColor: todayColor ?? Colors.blue[200],
       selectedColor: selectedColor ?? Colors.purple[200],
       showTicks: showTicks,
@@ -64,6 +67,10 @@ class DayStyle {
   /// [TextStyle] of a day inside a [SmallCalendar],
   /// that is not a part of the month that a smallCalendar represents.
   final TextStyle extendedDayTextStyle;
+
+  /// [TextStyle] of a day inside a [SmallCalendar],
+  /// Text style for the selected day.
+  final TextStyle selectedDayTextStyle;
 
   /// [Color] of indication that specific day is today.
   final Color todayColor;
@@ -104,6 +111,7 @@ class DayStyle {
     return new DayStyle.raw(
       dayTextStyle: dayTextStyle ?? this.dayTextStyle,
       extendedDayTextStyle: extendedDayTextStyle ?? this.extendedDayTextStyle,
+      selectedDayTextStyle: selectedDayTextStyle ?? this.selectedDayTextStyle,
       todayColor: todayColor ?? this.todayColor,
       selectedColor: selectedColor ?? this.selectedColor,
       showTicks: showTicks ?? this.showTicks,
